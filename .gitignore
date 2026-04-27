@@ -1,0 +1,23 @@
+# Data
+data/raw/*.csv
+data/processed/*.csv
+
+# Outputs
+outputs/
+
+# Python
+__pycache__/
+*.pyc
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS/ IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Env
+vent/
+.env
