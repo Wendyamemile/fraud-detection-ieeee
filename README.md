@@ -13,6 +13,11 @@ IEEE-CIS Fraud Detection (Kaggle)
 ## Step 1
 EDA with time-based analysis (fraud by hour, missing values, imbalance)
 
-## Next
-- Feature engineering
-- Model training (LightGBM)
+## Step 2 - Preprocessing Pipeline
+
+- Data validation checks
+- Missing value handling
+- Categorical encoding
+- Basic feature engineering (time-based)
+
+Pipeline implemented in src/preprocessing.py
