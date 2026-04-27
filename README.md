@@ -21,3 +21,12 @@ EDA with time-based analysis (fraud by hour, missing values, imbalance)
 - Basic feature engineering (time-based)
 
 Pipeline implemented in src/preprocessing.py
+
+## Step 3 - Feature Engineering
+
+- Time-based features (hour, day)
+- Lag features (time since last transaction)
+- Velocity features (transaction counts)
+- Behavioral features (amount statistics)
+
+This step transforms raw transactions into behavioral fraud signals.

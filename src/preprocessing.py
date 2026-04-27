@@ -1,5 +1,6 @@
 import pandas as pd
 from config import TARGET, TIME_COL
+from feature_engineering import feature_engineering_pipeline
 
 
 def drop_high_missing(df, threshold=0.9):
@@ -54,7 +55,8 @@ def preprocess_pipeline(df):
     df = drop_high_missing(df)
     df = fill_missing(df)
     df = encode_categorical(df)
-    df = basic_feature_engineering(df)
+    # df = basic_feature_engineering(df)
+    df = feature_engineering_pipeline(df)
 
     print("Preprocessing completed")
 
