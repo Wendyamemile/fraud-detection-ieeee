@@ -35,7 +35,25 @@ IEEE-CIS Fraud Detection (Kaggle)
 - Fraud Recall: 0.61
 - F1-score: 0.74
 
-## Next Steps
-- Improve recall using threshold tuning
-- Handle class imbalance (scale_pos_weight)
-- Add SHAP explainability
+### Step 6 - Model Improvement
+
+- Handled class imbalance using scale_pos_weight
+- Improved recall from 0.61 → 0.69
+- Optimized decision threshold
+- Evaluated using ROC-AUC and PR-AUC
+- Added SHAP explainability for feature insights
+
+## Results
+- Precision (Fraud): 0.87  
+- Recall (Fraud): 0.69  
+- F1-score: 0.77  
+- PR-AUC: ~0.81
+
+## Key Improvements
+
+- Better fraud detection recall
+- Improved fraud recall (+8%)
+- Better balance between precision and recall (tradeoff)
+- Handled class imbalance
+- Optimized decision threshold
+- Added SHAP explainability for feature insights

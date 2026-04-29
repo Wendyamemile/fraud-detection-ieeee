@@ -5,17 +5,21 @@ import sys, os
 import joblib
 
 def train_model(df):
-    print("Starting training...")
-
     X = df.drop(columns=[TARGET])
     y = df[TARGET]
 
-    # ⚠️ temporal split is better, but start simple
+    # imbalance ratio
+    scale_pos_weight = (y == 0).sum() / (y == 1).sum()
+    print("Scale_pos_weight:", scale_pos_weight)
+
     X_train, X_val, y_train, y_val = train_test_split(
-        X, y, test_size=0.2, random_state=42, stratify=y
+        X, y,
+        test_size=0.2,
+        stratify=y,
+        random_state=42
     )
 
-    model = get_model()
+    model = get_model(scale_pos_weight)
 
     model.fit(
         X_train,
@@ -24,10 +28,7 @@ def train_model(df):
         eval_metric="auc"
     )
 
-    print("Training completed")
-
     return model, X_val, y_val
-
 
 def save_model(model, name="baseline_model.pkl"):
     os.makedirs(MODEL_DIR, exist_ok=True)
