@@ -1,32 +1,41 @@
-# Temporal Fraud Detection
-
-This project focuses on detecting fraudulent transactions using temporal feature engineering and gradient boosting models.
+"This project builds an end-to-end machine learning system for detecting fraudulent transactions using temporal and behavioral features.
 
 ## Dataset
 IEEE-CIS Fraud Detection (Kaggle)
 
-## Structure
-- src/ → pipeline code
-- notebooks/ → EDA & experiments
-- outputs/ → generated reports
+## Pipeline
 
-## Step 1
-EDA with time-based analysis (fraud by hour, missing values, imbalance)
+### 1. Exploratory Data Analysis
+- Fraud distribution (~3%)
+- Missing value analysis
+- Temporal fraud patterns
 
-## Step 2 - Preprocessing Pipeline
-
-- Data validation checks
+### 2. Preprocessing
 - Missing value handling
 - Categorical encoding
-- Basic feature engineering (time-based)
+- Data validation
 
-Pipeline implemented in src/preprocessing.py
-
-## Step 3 - Feature Engineering
-
+### 3. Feature Engineering
 - Time-based features (hour, day)
 - Lag features (time since last transaction)
-- Velocity features (transaction counts)
-- Behavioral features (amount statistics)
+- Velocity features (transaction frequency)
+- Behavioral statistics (amount patterns)
 
-This step transforms raw transactions into behavioral fraud signals.
+### 4. Model
+- LightGBM classifier
+- Handles class imbalance
+- Probability-based predictions
+
+### 5. Evaluation
+- Precision, Recall, F1-score
+- ROC-AUC evaluation
+
+## Results
+- Fraud Precision: 0.96
+- Fraud Recall: 0.61
+- F1-score: 0.74
+
+## Next Steps
+- Improve recall using threshold tuning
+- Handle class imbalance (scale_pos_weight)
+- Add SHAP explainability
